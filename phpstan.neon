@@ -4,6 +4,7 @@ parameters:
 	fileExtensions:
 		- php
 	reportUnmatchedIgnoredErrors: true
+	treatPhpDocTypesAsCertain: false
 	ignoreErrors:
 		# Virtual classes can be safely ignored
 		- '#Class (Mezzio|Zend\\Expressive)\\ApplicationPipeline not found#'
@@ -11,3 +12,5 @@ parameters:
 		- '#Call to function method_exists\(\) with Whoops\\Handler\\JsonResponseHandler and ''contentType'' will always evaluate to true.#'
 		- '#Instanceof between \*NEVER\* and Whoops\\Run will always evaluate to false.#'
 		- '#Call to function method_exists\(\) with ''Whoops\\\\Util\\\\Misc'' and ''isAjaxRequest'' will always evaluate to true.#'
+		# empty check is fine
+		- '#Construct empty\(\) is not allowed. Use more strict comparison.#'
