@@ -103,6 +103,7 @@ class Application implements MiddlewareInterface, RequestHandlerInterface
     public function pipe($middlewareOrPath, $middleware = null) : void
     {
         $middleware = $middleware ?? $middlewareOrPath;
+        /** @var string $path */
         $path = $middleware === $middlewareOrPath ? '/' : $middlewareOrPath;
 
         $middleware = $path !== '/'
