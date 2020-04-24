@@ -17,6 +17,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 use function array_shift;
+use function assert;
 use function count;
 use function is_array;
 use function is_callable;
@@ -138,6 +139,7 @@ class MiddlewareFactory
         }
 
         $pipeline = new MiddlewarePipe();
+        assert(is_array($middleware));
         foreach ($middleware as $m) {
             $pipeline->pipe($this->prepare($m));
         }
